@@ -6,29 +6,28 @@ import Card from "./Card";
 const Grid = () => {
   const [cards, setCards] = useState(CARDS);
 
-  const handleCardClick = (cardPosition, cardURL) => {
+  const handleCardClick = (position, url) => {
     const updatedCards = cards;
-    updatedCards[cardPosition] = {
-      imageURL: cardURL,
+    updatedCards[position] = {
+      imageURL: url,
       isShown: true,
     };
-
-    setCards(updatedCards);
+    setCards((prevCards) => updatedCards);
   };
-
-  useEffect(() => {}, [cards]);
 
   return (
     <section className="grid">
-      {cards.map((card, i) => (
-        <Card
-          key={i}
-          position={i}
-          url={card.imageURL}
-          isShown={card.isShown}
-          cardClicked={handleCardClick}
-        />
-      ))}
+      {Object.keys(cards).map((key) => {
+        return (
+          <Card
+            key={key}
+            position={key}
+            url={cards[key].imageURL}
+            isShown={cards[key].isShown}
+            handleCardClick={handleCardClick}
+          />
+        );
+      })}
     </section>
   );
 };

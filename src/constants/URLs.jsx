@@ -44,12 +44,12 @@ imageURLs.forEach((el) => {
   }
 });
 
-const cards = [];
-randomizedImageURLs.forEach((url) => {
-  cards.push({
+let cards = {};
+randomizedImageURLs.forEach((url, i) => {
+  cards[i] = {
     imageURL: url,
     isShown: false,
-  });
+  };
 });
 
 export const CARDS = cards;

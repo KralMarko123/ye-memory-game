@@ -1,15 +1,15 @@
 import React from "react";
 import "../styles/Card.css";
 
-const Card = ({ position, url, isShown, cardClicked }) => {
-  const cardClickedHandler = () => {
-    cardClicked(position, url);
+const Card = ({ position, url, isShown, handleCardClick }) => {
+  const cardClickHandler = () => {
+    handleCardClick(position, url);
   };
 
   return (
     <div
       className={`card ${isShown ? "shown" : ""}`}
-      onClick={() => cardClickedHandler()}
+      onClick={() => cardClickHandler()}
     >
       <div className="card-inner">
         <div className="card-front"></div>
