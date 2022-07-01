@@ -44,12 +44,9 @@ imageURLs.forEach((el) => {
   }
 });
 
-let cards = {};
+let cards = [];
 randomizedImageURLs.forEach((url, i) => {
-  cards[i] = {
-    imageURL: url,
-    isShown: false,
-  };
+  cards[i] = { imageURL: url, isShown: false, isCompleted: false };
 });
 
 export const CARDS = cards;

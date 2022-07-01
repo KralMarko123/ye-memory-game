@@ -1,14 +1,14 @@
 import React from "react";
 import "../styles/Card.css";
 
-const Card = ({ position, url, isShown, handleCardClick }) => {
+const Card = ({ position, url, isShown, isCompleted, handleCardClick }) => {
   const cardClickHandler = () => {
-    handleCardClick(position, url);
+    handleCardClick(position);
   };
 
   return (
     <div
-      className={`card ${isShown ? "shown" : ""}`}
+      className={`card ${isShown || isCompleted ? "shown" : ""}`}
       onClick={() => cardClickHandler()}
     >
       <div className="card-inner">
