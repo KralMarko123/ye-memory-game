@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ye-memory-game/static/css/main.7265e0d5.css",
+    "main.js": "/ye-memory-game/static/js/main.5638d9b3.js",
+    "static/media/bojan.jpg": "/ye-memory-game/static/media/bojan.3ec633faecb5efa498c4.jpg",
+    "static/media/dadi.jpg": "/ye-memory-game/static/media/dadi.15a182921997541f0f2e.jpg",
+    "static/media/luka.png": "/ye-memory-game/static/media/luka.96a220dda3653a3aa384.png",
+    "static/media/dame.jpg": "/ye-memory-game/static/media/dame.c5c981fda3b67a7e3837.jpg",
+    "static/media/marko.jpg": "/ye-memory-game/static/media/marko.647bb97f5ceabd38249a.jpg",
+    "static/media/mance.jpg": "/ye-memory-game/static/media/mance.fae196e66687a6615368.jpg",
+    "static/media/andrej.jpg": "/ye-memory-game/static/media/andrej.67350dcaf9c39119e91c.jpg",
+    "static/media/jovan.jpg": "/ye-memory-game/static/media/jovan.2ad072a313b67388d3ff.jpg",
+    "static/media/bube.jpg": "/ye-memory-game/static/media/bube.c109dd4a0b12ea481f1b.jpg",
+    "static/media/petar.jpg": "/ye-memory-game/static/media/petar.e013d6de26a4803e0119.jpg",
+    "index.html": "/ye-memory-game/index.html",
+    "main.7265e0d5.css.map": "/ye-memory-game/static/css/main.7265e0d5.css.map",
+    "main.5638d9b3.js.map": "/ye-memory-game/static/js/main.5638d9b3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7265e0d5.css",
+    "static/js/main.5638d9b3.js"
+  ]
+}
