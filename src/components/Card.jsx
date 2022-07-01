@@ -6,11 +6,12 @@ const Card = ({ position, url, isShown, isCompleted, handleCardClick }) => {
     handleCardClick(position);
   };
 
+  let classNames = "card";
+  isShown || isCompleted ? (classNames += " shown") : null;
+  isCompleted ? (classNames += " completed") : null;
+
   return (
-    <div
-      className={`card ${isShown || isCompleted ? "shown" : ""}`}
-      onClick={() => cardClickHandler()}
-    >
+    <div className={`${classNames}`} onClick={() => cardClickHandler()}>
       <div className="card-inner">
         <div className="card-front"></div>
         <div className="card-back">

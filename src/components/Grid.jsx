@@ -1,15 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { CARDS } from "../constants/URLs";
-import "../styles/Grid.css";
+import { getRemainingTime } from "../utilities/Timer";
 import Card from "./Card";
+import "../styles/Grid.css";
 
-const Grid = () => {
+const Grid = ({ timeToComplete }) => {
   const [cards, setCards] = useState(CARDS);
   const [cardsUpdated, setCardsUpdated] = useState(false);
+  const [remainingTime, setRemainingTime] = useState({
+    seconds: "00",
+    minutes: "01",
+  });
+  const hasWon = () => {
+    return cards.every((card) => card.isCompleted);
+  };
+  const hasFailed = () => {
+    return remainingTime.minutes === "00" && remainingTime.seconds === "00";
+  };
 
   const handleCardClick = (position) => {
+    if (hasWon()) {
+      return;
+    } else if (hasFailed()) {
+      return;
+    }
+
     let updatedCards = cards;
     let otherCardOpen = false;
+    let numberOfCardsOpen = 0;
+
+    updatedCards.forEach((card) => {
+      card.isShown === true && card.isCompleted === false
+        ? numberOfCardsOpen++
+        : null;
+    });
+
+    if (numberOfCardsOpen > 1) {
+      return;
+    }
 
     updatedCards.forEach((card, i) => {
       card.isShown === true && position !== i && card.isCompleted === false
@@ -35,7 +63,7 @@ const Grid = () => {
 
         setCards(updatedCards);
         setCardsUpdated(true);
-      }, 1500);
+      }, 1000);
     } else {
       updatedCards[position].isShown = true;
       updatedCards[position].isCompleted = true;
@@ -44,6 +72,8 @@ const Grid = () => {
       setCards(updatedCards);
       setCardsUpdated(true);
     }
+
+    checkIsGameOver();
   };
 
   useEffect(() => {
@@ -52,21 +82,48 @@ const Grid = () => {
     }
   }, [cards, cardsUpdated]);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (!hasWon() && hasFailed) updateRemainingTime(timeToComplete);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, [timeToComplete]);
+
+  const updateRemainingTime = (countdown) => {
+    setRemainingTime((prevTime) => getRemainingTime(countdown));
+  };
+
   return (
-    <section className="grid">
-      {cards.map((card, i) => {
-        return (
-          <Card
-            key={i}
-            position={i}
-            url={cards[i].imageURL}
-            isShown={cards[i].isShown}
-            isCompleted={cards[i].isCompleted}
-            handleCardClick={handleCardClick}
-          />
-        );
-      })}
-    </section>
+    <>
+      {}
+      <div className="timer">
+        {`${hasWon() ? "Completed with" : ""} 
+        
+         ${
+           !hasFailed()
+             ? remainingTime.minutes + ":" + remainingTime.seconds
+             : "Sorry, better luck next time."
+         }
+        
+        
+        ${hasWon() ? "seconds left." : ""}`}
+      </div>
+
+      <section className="grid">
+        {cards.map((card, i) => {
+          return (
+            <Card
+              key={i}
+              position={i}
+              url={cards[i].imageURL}
+              isShown={cards[i].isShown}
+              isCompleted={cards[i].isCompleted}
+              handleCardClick={handleCardClick}
+            />
+          );
+        })}
+      </section>
+    </>
   );
 };
 
