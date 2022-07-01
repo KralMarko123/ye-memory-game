@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ye-memory-game/static/css/main.7265e0d5.css",
-    "main.js": "/ye-memory-game/static/js/main.5638d9b3.js",
+    "main.css": "/ye-memory-game/static/css/main.655ba356.css",
+    "main.js": "/ye-memory-game/static/js/main.13f2d15f.js",
     "static/media/bojan.jpg": "/ye-memory-game/static/media/bojan.3ec633faecb5efa498c4.jpg",
     "static/media/dadi.jpg": "/ye-memory-game/static/media/dadi.15a182921997541f0f2e.jpg",
     "static/media/luka.png": "/ye-memory-game/static/media/luka.96a220dda3653a3aa384.png",
@@ -13,11 +13,11 @@
     "static/media/bube.jpg": "/ye-memory-game/static/media/bube.c109dd4a0b12ea481f1b.jpg",
     "static/media/petar.jpg": "/ye-memory-game/static/media/petar.e013d6de26a4803e0119.jpg",
     "index.html": "/ye-memory-game/index.html",
-    "main.7265e0d5.css.map": "/ye-memory-game/static/css/main.7265e0d5.css.map",
-    "main.5638d9b3.js.map": "/ye-memory-game/static/js/main.5638d9b3.js.map"
+    "main.655ba356.css.map": "/ye-memory-game/static/css/main.655ba356.css.map",
+    "main.13f2d15f.js.map": "/ye-memory-game/static/js/main.13f2d15f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7265e0d5.css",
-    "static/js/main.5638d9b3.js"
+    "static/css/main.655ba356.css",
+    "static/js/main.13f2d15f.js"
   ]
 }
