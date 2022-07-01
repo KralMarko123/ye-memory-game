@@ -1,10 +1,14 @@
 {
   "name": "ye-memory-game",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple memory game",
+  "homepage": "https://kralmarko123.github.io/ye-memory-game",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Marko Markovikj",
   "license": "ISC",
