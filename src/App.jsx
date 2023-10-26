@@ -4,11 +4,11 @@ import Grid from "./components/Grid";
 import "./styles/App.css";
 
 const App = () => {
-  return (
-    <div className="app">
-      <Grid timeToComplete={dayjs().add(1, "minute")} />
-    </div>
-  );
+	return (
+		<div className="app">
+			<Grid timeToComplete={dayjs().add(1, "minute")} />
+		</div>
+	);
 };
 
 export default App;

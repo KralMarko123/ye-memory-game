@@ -12,41 +12,38 @@ import petar from "../assets/images/petar.jpg";
 import simon from "../assets/images/simon.png";
 
 const imageURLs = [
-  andrej,
-  bojan,
-  bube,
-  dadi,
-  dame,
-  ivanovski,
-  jovan,
-  luka,
-  mance,
-  marko,
-  petar,
-  simon,
+	andrej,
+	bojan,
+	bube,
+	dadi,
+	dame,
+	ivanovski,
+	jovan,
+	luka,
+	mance,
+	marko,
+	petar,
+	simon,
 ];
 
 const randomizedImageURLs = Array(imageURLs.length * 2).fill(null);
 
 imageURLs.forEach((el) => {
-  let cardAddedCounter = 0;
-  while (cardAddedCounter < 2) {
-    let randomIndex = Math.floor(Math.random() * randomizedImageURLs.length);
-    if (
-      randomizedImageURLs[randomIndex] === el ||
-      randomizedImageURLs[randomIndex] !== null
-    ) {
-      continue;
-    } else {
-      randomizedImageURLs[randomIndex] = el;
-      cardAddedCounter++;
-    }
-  }
+	let cardAddedCounter = 0;
+	while (cardAddedCounter < 2) {
+		let randomIndex = Math.floor(Math.random() * randomizedImageURLs.length);
+		if (randomizedImageURLs[randomIndex] === el || randomizedImageURLs[randomIndex] !== null) {
+			continue;
+		} else {
+			randomizedImageURLs[randomIndex] = el;
+			cardAddedCounter++;
+		}
+	}
 });
 
 let cards = [];
 randomizedImageURLs.forEach((url, i) => {
-  cards[i] = { imageURL: url, isShown: false, isCompleted: false };
+	cards[i] = { imageURL: url, isShown: false, isCompleted: false };
 });
 
 export const CARDS = cards;
